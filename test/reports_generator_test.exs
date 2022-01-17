@@ -1,8 +1,15 @@
 defmodule ReportsGeneratorTest do
   use ExUnit.Case
-  doctest ReportsGenerator
 
-  test "greets the world" do
-    assert ReportsGenerator.hello() == :world
+  describe "build/1" do
+    test "builds the report" do
+      file_name = "report_test.csv"
+
+      reponse = ReportsGenerator.build(file_name)
+
+      expected_response = "banana"
+
+      assert reponse == expected_response
+    end
   end
 end
